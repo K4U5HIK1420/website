@@ -1,0 +1,29 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+h1, h2, h3, h4, h5 {
+    margin: 0;
+    padding: 0;
+}
+footer {
+    background-color: #111;
+    color: #fff;
+    padding: 20px;
+}
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+}
+.footer-logo {
+    font-size: 24px;
+}
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+.footer-address p, .footer-credits p {
+    margin: 5px 0;
+}
