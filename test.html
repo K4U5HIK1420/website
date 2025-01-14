@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Underline Hover Animation</title>
+  <style>
+    .underline-container {
+      display: inline-block;
+      position: relative;
+      font-size: 24px;
+      cursor: pointer;
+      padding-bottom: 2px; /* Optional, to make room for the underline */
+    }
+
+    .underline {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      border: none;
+      height: 2px;
+      background-color: black;
+      transform: scaleX(0);
+      transform-origin: bottom right;
+    }
+  </style>
+</head>
+<body>
+  <div class="underline-container">
+    Hover over me
+    <hr class="underline">
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+  <script>
+    // Select the container
+    const container = document.querySelector('.underline-container');
+
+    // Create GSAP timeline
+    const tl = gsap.timeline({ paused: true });
+
+    // Define the animation
+    tl.to('.underline', { scaleX: 1, transformOrigin: 'bottom left', duration: 0.3, ease: 'power2.out' });
+
+    // Add event listeners to play/reverse the animation on hover
+    container.addEventListener('mouseenter', () => tl.play());
+    container.addEventListener('mouseleave', () => tl.reverse());
+  </script>
+</body>
+</html>
